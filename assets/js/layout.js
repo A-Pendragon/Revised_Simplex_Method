@@ -1,0 +1,1 @@
+$('#splashScreen').fadeIn(2000);

@@ -1,0 +1,22 @@
+.center{
+	text-align: center
+}
+
+body{
+	background: #e5e5e5;
+}
+
+#logoContainer{
+	margin-top: 15%;
+	height:50%;
+}
+
+#detailsContainer{
+	margin-top: 3%;
+	height:50%;
+}
+
+#splashScreen{
+	
+	height: 100%
+}
