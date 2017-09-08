@@ -19,8 +19,14 @@ function credits(){
 
 
 function backButton(id){
+	$('html').height('100%');
 	 $("#"+id).hide();
 	 $("#mainMenu").fadeIn();
+}
+
+function backToInputData(){
+ 	$("#Result").hide();
+ 	$("#Calculator").fadeIn();
 }
 
 var noOfConstraints;
@@ -60,18 +66,18 @@ function calculate(){
 	}else{
 		for (var i = 1; i <=noOfConstraints; i++){
 			if (!$("#constraint"+i).val()) {
-				break;
 				error=true;
 				$('html, body').animate({scrollTop : 0},800);
 				$('#error').fadeIn();
 				$('#error').text("Please fill up all fields");
+				break;
 			}
 		}
 	}
 	if(!error){
 		// Minimized - 0
 		// Maximized - 1
-
+		$('#error').hide();
 		var subjectTo=$("#subjectTo").val();
 		var subjectToEquation=$("#subjectToEquation").val();
 		var constraints=[];
@@ -80,9 +86,11 @@ function calculate(){
 				$("#constraint"+i).val()
 			]);
 		}
-
+		$("#Calculator").hide();
+		$("#Result").fadeIn();
 		// functionName(subjectTo,subjectToEquation,constraints)
 	}
+	$('html').height($("#Calculator").height()+75);
 }
 
 
