@@ -75,8 +75,6 @@ function calculate(){
 		}
 	}
 	if(!error){
-		// Minimized - 0
-		// Maximized - 1
 		$('#error').hide();
 		var subjectTo=$("#subjectTo").val();
 		var subjectToEquation=$("#subjectToEquation").val();
@@ -86,11 +84,22 @@ function calculate(){
 				$("#constraint"+i).val()
 			]);
 		}
+
+		// var result=functionName(subjectTo,subjectToEquation,constraints)
+
+
 		$("#Calculator").hide();
 		$("#Result").fadeIn();
-		// functionName(subjectTo,subjectToEquation,constraints)
+		
+
+	}else{
+		if (noOfConstraints>=4) {
+    		$('html').height($("#Calculator").height()+75);
+    	}else{
+    		$('html').height('100%');
+    	}
 	}
-	$('html').height($("#Calculator").height()+75);
+	
 }
 
 
