@@ -14,6 +14,7 @@
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/layout.js"></script>
+    <script type="text/javascript" src="assets/js/back.js"></script>
     
 </head>
 
@@ -45,14 +46,40 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2 panel">
-				<div class="form-group">
-					<label>Subject To</label>
-					<select class="form-control">
-						<option style="display: none;">Select</option>
-						<option value="0">Min</option>
-						<option value="1">Max</option>
-					</select>
+			<div class="col-md-8 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2>Input Data</h2>
+					</div>
+					<div class="panel-body">
+						<p id="error" class="alert alert-danger"></p>
+						<div class="form-group">
+							<label>Subject To</label>
+							<select id="subjectTo" class="form-control">
+								<option value="" style="display: none;">Select</option>
+								<option value="0">Minimized</option>
+								<option value="1">Maximized</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input id="subjectToEquation" type="text" class="form-control" placeholder="Enter Equation"></input>
+						</div>
+						<div class="form-group">
+							<label>Constraints</label>
+							<input id="noOfConstraints" type="number" class="form-control" placeholder="Enter No of Constraints then press enter"></input>
+						</div>
+						<div id="constraintsFields">
+							
+						</div>
+						<div id="calculateButton" class="form-group">
+							<button onclick="calculate()" class="btn btn-default btn-block btn-lg">
+								<i class="fa fa-calculator" aria-hidden="true"></i> &nbsp; Calculate
+							</button>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<h4>Revised Simplex Method Calculator</h4>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -72,9 +99,6 @@
 			</div>
 		</div>
 	</div>
-
-<script language="javascript">
-</script>
 	
 
 
