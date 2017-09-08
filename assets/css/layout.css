@@ -2,12 +2,21 @@
 	text-align: center
 }
 
-body{
+html,body{
 	background: #e5e5e5;
+	padding: 10px;
+ 	height:100%;
+	
+}
+
+#mainContainer{
+	border: solid 4px #694747;
+    height: 100%;
+
 }
 
 #logoContainer{
-	margin-top: 15%;
+	margin-top: 14%;
 	height:50%;
 }
 
@@ -16,7 +25,19 @@ body{
 	height:50%;
 }
 
+#mainButtons{
+	margin-top: 3%;
+}
+
 #splashScreen{
 	
 	height: 100%
+}
+
+.undecoratedLink{
+	text-decoration: none;
+}
+
+.undecoratedLink:hover{
+	text-decoration: none;
 }

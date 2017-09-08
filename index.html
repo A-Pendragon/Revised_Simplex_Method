@@ -13,33 +13,57 @@
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/layout.js"></script>
     
 </head>
 
 <body>
+<div id='mainContainer'>
 
-	<div style="display: none" id="splashScreen" class="container-fluid">
+	<div id="mainMenu" class="container-fluid">
 		<div id="logoContainer" class="row">
-			<div class="col-md-3 col-md-offset-3">
+			<div class="col-md-12">
 				<center>
-				<img  width="250px" src="assets/images/logo.png" class="img-responsive">
+				<img width="400px" src="assets/images/logo.png" class="img-responsive">
 				</center>
 			</div>
-			<div style="margin-left: -5%;margin-top: 5%" class="col-md-3 center">
-				<h1>RSA Calculator</h1>
-				<h3>Revised Simplex Algorithm</h3>
-			</div>
 		</div>
-		<div id="detailsContainer" class="row">
-			<div class="col-md-12 center">
-				<h4>Copyright © 2017 BSCS - 4A | A.Y. 2017-2018. All rights reserved.</h4>
+		<div id="mainButtons" class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<button onclick="startButton()" class="btn btn-danger btn-lg btn-block">Start</button>
+				<button onclick="credits()" class="btn btn-info btn-lg btn-block">Credits</button>
 			</div>
 		</div>
 	</div>
+
+	<div style="display: none;" id="Calculator" class="container-fluid">
+		<div class="row">
+
+		</div>
+	</div>
+
+	<div style="display: none;padding: 10px" id="Credits" class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<button onclick="backButton('Credits')" class="btn btn-link btn-lg undecoratedLink">
+					<i class="fa fa-arrow-left" aria-hidden="true"></i> &nbsp; Back
+				</button>
+			</div>
+		</div>
+		<div style="padding: 20px" class="row">
+			<div class="col-md-8 col-md-offset-2 panel">
+				<h1>Credits</h1>
+			</div>
+		</div>
+	</div>
+
+<script language="javascript">
+</script>
 	
 
-	<script src="assets/js/layout.js"></script>
 
+	
+</div>
 </body>
 
 </html>
