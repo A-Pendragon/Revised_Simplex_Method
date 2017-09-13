@@ -14,7 +14,6 @@
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/layout.js"></script>
-    <script type="text/javascript" src="assets/js/back.js"></script>
     
 </head>
 
@@ -54,15 +53,8 @@
 					<div class="panel-body">
 						<p id="error" class="alert alert-danger"></p>
 						<div class="form-group">
-							<label>Subject To</label>
-							<select id="subjectTo" class="form-control">
-								<option value="" style="display: none;">Select</option>
-								<option value="0">Minimized</option>
-								<option value="1">Maximized</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<input id="subjectToEquation" type="text" class="form-control" placeholder="Enter Equation"></input>
+							<label>Objective Function</label>
+							<input id="objectiveFunction" type="text" class="form-control" placeholder="Enter Equation following this format ' z,x1,x2,x3,..xN '"></input>
 						</div>
 						<div class="form-group">
 							<label>Constraints</label>

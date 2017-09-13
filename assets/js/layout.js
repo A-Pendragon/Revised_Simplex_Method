@@ -33,7 +33,6 @@ var noOfConstraints;
 
 
 
-i = 0;
 $(document).ready(function(){
     $( "#noOfConstraints" ).change(function() {
     	
@@ -43,7 +42,8 @@ $(document).ready(function(){
 	  		constraintsFields +=""
 		  	+"<div class='form-group'>"
 		  	+"<label>Constraint "+i+"</label>"
-		  	+"<input id='constraint"+i+"' type='text' class='form-control' ></input>"
+		  	+"<input id='constraint"+i+"' type='text' class='form-control'"
+		  	+"placeholder='Enter constraint following this format total,x1,x2,x3,..xN'></input>"
 		  	+"</div>";
 	  	}
 	  	$("#constraintsFields").html(constraintsFields);
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 function calculate(){
 	var error=false;
-	if (!$("#subjectTo").val() || !$("#subjectToEquation").val() || !$("#noOfConstraints").val()) {
+	if (!$("#objectiveFunction").val() || !$("#noOfConstraints").val()) {
 		$('html, body').animate({scrollTop : 0},800);
 		$('#error').fadeIn();
 		$('#error').text("Please fill up all fields");
@@ -74,20 +74,23 @@ function calculate(){
 			}
 		}
 	}
+
 	if(!error){
 		$('#error').hide();
-		var subjectTo=$("#subjectTo").val();
-		var subjectToEquation=$("#subjectToEquation").val();
-		var constraints=[];
+
+		var data=[];
+
+		data.push(extractData($("#objectiveFunction").val()));
+
 		for (var i = 1; i <=noOfConstraints; i++){
-			constraints.push([
-				$("#constraint"+i).val()
-			]);
+			data.push(extractData($("#constraint"+i).val()));
 		}
 
-		// var result=functionName(subjectTo,subjectToEquation,constraints)
+		console.log(data);
 
+		// var result=functionName(data)
 
+		$('html').height('100%');
 		$("#Calculator").hide();
 		$("#Result").fadeIn();
 		
@@ -100,6 +103,25 @@ function calculate(){
     	}
 	}
 	
+}
+
+
+function extractData(toExtract){
+	var extracted = [];
+	var data = "";
+	for (var i = 0; i < toExtract.length; i++) {
+
+		if (toExtract.charAt(i)!=",") {
+			data += toExtract.charAt(i);
+		}
+		
+		if (toExtract.charAt(i+1)==",") {
+			extracted.push(parseInt(data));
+			data = "";
+		}
+		
+	}
+	return extracted;
 }
 
 
