@@ -14,7 +14,7 @@
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/layout.js"></script>
-    
+    <script type="text/javascript" src="assets/js/revisedsimplex.js"></script> 
 </head>
 
 <body>
@@ -64,7 +64,7 @@
 							
 						</div>
 						<div id="calculateButton" class="form-group">
-							<button onclick="calculate()" class="btn btn-default btn-block btn-lg">
+							<button onclick="calculate();" class="btn btn-default btn-block btn-lg">
 								<i class="fa fa-calculator" aria-hidden="true"></i> &nbsp; Calculate
 							</button>
 						</div>
@@ -90,7 +90,7 @@
 				<div class="panel-heading">
 					<h2>Result</h2>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body" id="result_body">
 					
 				</div>
 				<div class="panel-footer">
@@ -124,10 +124,6 @@
 			</div>
 		</div>
 	</div>
-	
-
-
-	
 </div>
 </body>
 

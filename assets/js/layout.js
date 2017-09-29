@@ -87,6 +87,7 @@ function calculate(){
 		}
 
 		console.log(data);
+		tableau = data;
 
 		// var result=functionName(data)
 
@@ -103,6 +104,7 @@ function calculate(){
     	}
 	}
 	
+	revisedSimplex();
 }
 
 
@@ -115,7 +117,7 @@ function extractData(toExtract){
 			data += toExtract.charAt(i);
 		}
 		
-		if (toExtract.charAt(i+1)==",") {
+		if (toExtract.charAt(i+1)=="," || i == toExtract.length - 1) {
 			extracted.push(parseInt(data));
 			data = "";
 		}
